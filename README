@@ -1,4 +1,7 @@
 This is your new Play 2.1 application
 =====================================
 
+This application is a variant of computer-database sample tailored for a basic address book scenario with some minor jQuery.
+
 This file will be packaged with your application, when using `play dist`.
+
