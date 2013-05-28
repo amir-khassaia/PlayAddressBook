@@ -1,0 +1,40 @@
+@(id: Long, contactForm: Form[Contact])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main {
+    
+    <h1>Edit Contact</h1>
+    
+    @form(routes.Application.update(id)) {
+        
+        <fieldset>
+        
+            @inputText(contactForm("lastName"), '_label -> "Last name")
+            @inputText(contactForm("firstName"), '_label -> "First name")
+            @inputText(contactForm("phoneNumber"), '_label -> "Phone number")
+            @inputText(contactForm("mobileNumber"), '_label -> "Mobile number")
+            
+            @select(
+                contactForm("AddressBook.id"), 
+                options(AddressBook.options), 
+                '_label -> "Address book", '_default -> "-- Choose an address book --",
+                '_showConstraints -> false
+            )
+        
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this contact" class="btn primary"> or 
+            <a href="@routes.Application.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.Application.delete(id), 'class -> "topRight") {
+        <input type="submit" value="Delete this contact" class="btn danger">
+    }
+    
+}

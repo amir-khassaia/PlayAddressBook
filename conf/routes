@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /contact					controllers.Application.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
+# Add contact
+GET     /contact/new               controllers.Application.create()
+POST    /contact                   controllers.Application.save()
+
+# Edit existing contact
+GET     /contact/:id              controllers.Application.edit(id:Long)
+POST    /contact/:id              controllers.Application.update(id:Long)
+
+# Delete a computer
+POST    /contact/:id/delete       controllers.Application.delete(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file             controllers.Assets.at(path="/public", file)
+

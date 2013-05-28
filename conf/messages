@@ -1,0 +1,5 @@
+# Messages
+
+contacts.list.title={0,choice,0#No contacts|1#One contact|1<{0,number,integer} contacts} found
+
+
