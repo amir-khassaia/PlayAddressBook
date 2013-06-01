@@ -5,3 +5,5 @@ This application is a variant of computer-database sample tailored for a basic a
 
 This file will be packaged with your application, when using `play dist`.
 
+To run cd into the application directory and issue 'play run'.
+
